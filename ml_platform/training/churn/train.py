@@ -25,14 +25,19 @@ X_train, X_test, y_train, y_test = train_test_split(
     stratify=y,
 )
 
-pipeline = Pipeline([
-    ("imputer", SimpleImputer(strategy="median")),
-    ("scaler", StandardScaler()),
-    ("model", LogisticRegression(
-        max_iter=1000,
-        class_weight="balanced",
-    )),
-])
+pipeline = Pipeline(
+    [
+        ("imputer", SimpleImputer(strategy="median")),
+        ("scaler", StandardScaler()),
+        (
+            "model",
+            LogisticRegression(
+                max_iter=1000,
+                class_weight="balanced",
+            ),
+        ),
+    ]
+)
 
 pipeline.fit(X_train, y_train)
 

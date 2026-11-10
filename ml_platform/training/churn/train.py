@@ -1,13 +1,14 @@
-import joblib
 import json
-import matplotlib.pyplot as plt
 from pathlib import Path
+
+import joblib
+import matplotlib.pyplot as plt
 from sklearn.impute import SimpleImputer
 from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import classification_report, roc_auc_score, roc_curve
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import classification_report, roc_auc_score, roc_curve
 from ucimlrepo import fetch_ucirepo
 
 dataset = fetch_ucirepo(id=563) # oh so this guy does all the behind the scenes ha🤣🤣

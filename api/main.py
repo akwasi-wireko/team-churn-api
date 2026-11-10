@@ -23,7 +23,7 @@ app = FastAPI(
     description="Week 1 production API for telecom churn prediction.",
 )
 
-
+#  GE AND LE params in field?? oh... I see >= and <=... interesting..
 class PredictionRequest(BaseModel):
     call_failure: int = Field(ge=0)
     complains: int = Field(ge=0, le=1)
